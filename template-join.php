@@ -1,8 +1,16 @@
 <?php
 /* Template Name: Halaman Join */
 $form_submitted = false;
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit_join'])) {
-    $form_submitted = true;
+$join_data = array();
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_join'], $_POST['hommie_join_nonce']) && wp_verify_nonce($_POST['hommie_join_nonce'], 'hommie_join_form')) {
+    $join_data = array(
+        'name' => sanitize_text_field(wp_unslash($_POST['name'] ?? '')),
+        'email' => sanitize_email(wp_unslash($_POST['email'] ?? '')),
+        'role' => sanitize_text_field(wp_unslash($_POST['role'] ?? '')),
+        'portfolio' => esc_url_raw(wp_unslash($_POST['portfolio'] ?? '')),
+        'reason' => sanitize_textarea_field(wp_unslash($_POST['reason'] ?? '')),
+    );
+    $form_submitted = $join_data['name'] && is_email($join_data['email']) && $join_data['role'] && $join_data['portfolio'] && $join_data['reason'];
 }
 get_header();
 ?>
@@ -18,7 +26,7 @@ get_header();
     </div>
 
     <!-- Membership Benefits -->
-    <section class="section-padding">
+    <section id="faq" class="section-padding">
         <div class="container">
             <div class="section-title fade-up">
                 <h2 class="lang-id">Mengapa Bergabung?</h2>
@@ -111,24 +119,31 @@ get_header();
                             <h3 class="lang-en" style="font-size: 1.75rem; margin-bottom: 16px;">Registration Successful!</h3>
                             <p class="lang-id" style="color: var(--text-light);">Terima kasih telah mendaftar. Tim kurator kami akan segera meninjau profilmu dan menghubungi via email.</p>
                             <p class="lang-en" style="color: var(--text-light);">Thank you for registering. Our curation team will review your profile shortly and contact you via email.</p>
+                            <?php if (!empty($join_data['name'])) : ?>
+                                <div class="submission-summary">
+                                    <p><strong><?php echo esc_html($join_data['name']); ?></strong></p>
+                                    <p><?php echo esc_html($join_data['email']); ?> · <?php echo esc_html(ucfirst($join_data['role'])); ?></p>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php else : ?>
                     <h3 class="lang-id" style="font-size: 1.75rem; margin-bottom: 24px;">Form Registrasi Calon Anggota</h3>
                     <h3 class="lang-en" style="font-size: 1.75rem; margin-bottom: 24px;">Prospective Member Registration Form</h3>
                     <form action="#contact" method="POST">
+                        <?php wp_nonce_field('hommie_join_form', 'hommie_join_nonce'); ?>
                         <div class="form-group">
                             <label class="form-label" for="name"><span class="lang-id">Nama Lengkap</span><span class="lang-en">Full Name</span></label>
-                            <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
                         </div>
                         
                         <div class="form-group">
                             <label class="form-label" for="email"><span class="lang-id">Alamat Email</span><span class="lang-en">Email Address</span></label>
-                            <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
                         </div>
                         
                         <div class="form-group">
                             <label class="form-label" for="role"><span class="lang-id">Minat/Role Utama</span><span class="lang-en">Interest/Main Role</span></label>
-                            <select id="role" class="form-control" style="appearance: auto;" required>
+                            <select id="role" name="role" class="form-control" style="appearance: auto;" required>
                                 <option value="" class="lang-id">-- Pilih Peran --</option>
                                 <option value="" class="lang-en">-- Select Role --</option>
                                 <option value="design">UI/UX Designer</option>
@@ -142,12 +157,12 @@ get_header();
                         
                         <div class="form-group">
                             <label class="form-label" for="portfolio"><span class="lang-id">Link Portofolio / GitHub / LinkedIn</span><span class="lang-en">Portfolio / GitHub / LinkedIn Link</span></label>
-                            <input type="url" id="portfolio" class="form-control" placeholder="https://..." required>
+                            <input type="url" id="portfolio" name="portfolio" class="form-control" placeholder="https://..." required>
                         </div>
                         
                         <div class="form-group">
                             <label class="form-label" for="reason"><span class="lang-id">Mengapa ingin bergabung dengan Hommie?</span><span class="lang-en">Why do you want to join Hommie?</span></label>
-                            <textarea id="reason" class="form-control" placeholder="..." required></textarea>
+                            <textarea id="reason" name="reason" class="form-control" placeholder="..." required></textarea>
                         </div>
                         
                         <button type="submit" name="submit_join" class="btn btn-primary" style="width: 100%;"><span class="lang-id">Kirim Aplikasi Sekarang</span><span class="lang-en">Submit Application Now</span></button>

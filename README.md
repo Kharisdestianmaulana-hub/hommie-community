@@ -13,7 +13,19 @@ Untuk memenuhi dan melampaui kriteria "Desain Masa Depan", tema ini dilengkapi d
 - 🌐 **Sistem Dwibahasa (Bilingual ID/EN)**: Implementasi translasi tanpa memuat ulang halaman (*No Page Reload*) menggunakan manipulasi Vanilla JavaScript dan CSS Variables.
 - 🌙 **Dynamic Dark Mode**: Peralihan warna seketika ke Mode Gelap yang elegan, mengingat preferensi pengguna (*State Preservation*) melalui `localStorage`.
 - ⏳ **Smart Preloader**: Animasi pemuatan minimalis yang hanya muncul satu kali selama sesi kunjungan (berbasis `sessionStorage`), membuat navigasi antar halaman terasa sangat cepat.
+- 🧭 **Problem & Solution Framework**: Narasi homepage yang menjelaskan masalah kreator muda dan solusi Hommie melalui alur **Learn → Collaborate → Leave Legacy**.
+- 🧭 **Legacy Timeline**: Alur perjalanan komunitas yang memperkuat narasi "Build Your Legacy" tanpa menambah jumlah halaman.
+- 🗺️ **Legacy Map**: Peta dampak interaktif untuk menunjukkan persebaran karya komunitas.
+- 🧠 **Impact Simulator / Mentor Matcher**: Pengunjung memilih role lalu mendapat rekomendasi jalur kontribusi.
+- 📊 **Community Pulse Dashboard**: Ringkasan aktivitas mingguan yang membuat komunitas terasa aktif dan hidup.
+- 🎛️ **Interactive Project Filter**: Galeri karya bisa difilter berdasarkan kategori Web, UI/UX, Branding, dan Dampak.
+- 🧮 **Legacy Score**: Setiap karya dinilai dari Creativity, Collaboration, dan Impact agar portofolio terasa lebih strategis.
+- 🧩 **Project Journey Modal per Karya**: Setiap karya unggulan memiliki cerita unik dengan struktur Problem, Process, People, Product, dan Legacy.
+- 🕰️ **Digital Time Capsule 2030**: Kartu pesan masa depan yang memperkuat tema "Designing the Future".
+- ♿ **Accessibility Mode**: Toggle untuk memperbesar keterbacaan dan mengurangi animasi.
 - 📦 **Modal Details (Pop-up)**: Memaksimalkan batasan 5 halaman dari kompetisi dengan mengimplementasikan detail program/postingan ke dalam jendela *Modal* interaktif.
+- 📝 **Join Form Validation**: Form pendaftaran calon anggota dengan nonce WordPress, sanitasi input, dan tampilan konfirmasi.
+- 🔥 **Legacy Pledge**: Interaksi ringan yang mengajak pengunjung memilih fokus warisan digital mereka.
 - 📍 **Active Navigation State**: Penanda visual dinamis untuk halaman yang sedang aktif.
 - ❓ **Interactive FAQ**: Menggunakan sistem *Accordion* yang bersih dan responsif.
 

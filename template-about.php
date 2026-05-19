@@ -21,10 +21,10 @@ get_header();
                     <h2 class="lang-id" style="font-size: 2.5rem; margin-bottom: 24px;">Berawal dari Ruang Tengah</h2>
                     <h2 class="lang-en" style="font-size: 2.5rem; margin-bottom: 24px;">Started from the Living Room</h2>
                     <p class="lang-id" style="font-size: 1.125rem; color: var(--text-light); margin-bottom: 16px;">
-                        Hommie lahir pada tahun 2024 dari sebuah percakapan sederhana di ruang tengah. Kami menyadari bahwa banyak kreator digital muda, desainer, dan developer yang merasa terisolasi dalam bekerja, meskipun terhubung secara digital.
+                        Hommie lahir pada tahun 2024 dari sebuah percakapan sederhana di ruang tengah. Kami menyadari bahwa banyak <span class="text-highlight">kreator digital muda, desainer, dan developer</span> yang merasa terisolasi dalam bekerja, meskipun terhubung secara digital.
                     </p>
                     <p class="lang-en" style="font-size: 1.125rem; color: var(--text-light); margin-bottom: 16px;">
-                        Hommie was born in 2024 from a simple conversation in the living room. We realized that many young digital creators, designers, and developers felt isolated in their work, despite being digitally connected.
+                        Hommie was born in 2024 from a simple conversation in the living room. We realized that many <span class="text-highlight">young digital creators, designers, and developers</span> felt isolated in their work, despite being digitally connected.
                     </p>
                     <p class="lang-id" style="font-size: 1.125rem; color: var(--text-light); margin-bottom: 16px;">
                         Membangun portofolio saja tidak cukup. Dibutuhkan lingkungan yang suportif untuk saling bertukar ide, memberikan masukan yang jujur, dan berkolaborasi membuat proyek nyata yang berdampak.
@@ -33,10 +33,16 @@ get_header();
                         Building a portfolio alone is not enough. A supportive environment is needed to exchange ideas, give honest feedback, and collaborate to create real, impactful projects.
                     </p>
                     <p class="lang-id" style="font-size: 1.125rem; color: var(--text-light);">
-                        Dari situlah konsep "Perapian Digital" muncul. Kami ingin menciptakan tempat yang terasa seperti rumah: hangat, aman untuk berbuat salah dan belajar, serta memantik semangat layaknya api perapian di malam hari.
+                        Dari situlah konsep <span class="text-highlight">"Perapian Digital"</span> muncul. Kami ingin menciptakan tempat yang terasa seperti rumah: hangat, aman untuk berbuat salah dan belajar, serta memantik semangat layaknya api perapian di malam hari.
                     </p>
                     <p class="lang-en" style="font-size: 1.125rem; color: var(--text-light);">
-                        From there, the "Digital Hearth" concept emerged. We wanted to create a place that feels like home: warm, safe to make mistakes and learn, and igniting passion like a fireplace at night.
+                        From there, the <span class="text-highlight">"Digital Hearth"</span> concept emerged. We wanted to create a place that feels like home: warm, safe to make mistakes and learn, and igniting passion like a fireplace at night.
+                    </p>
+                    <p class="lang-id" style="font-size: 1.125rem; color: var(--text-light); margin-top: 16px;">
+                        Bagi kami, masa depan web harus bisa diakses lebih banyak orang. Karena itu Hommie menempatkan aksesibilitas, kolaborasi, dan keberlanjutan sebagai bagian dari proses kreatif.
+                    </p>
+                    <p class="lang-en" style="font-size: 1.125rem; color: var(--text-light); margin-top: 16px;">
+                        For us, the future web must be accessible to more people. That is why Hommie treats accessibility, collaboration, and sustainability as part of the creative process.
                     </p>
                 </div>
                 <div class="placeholder-img" style="height: 400px;">

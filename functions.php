@@ -26,3 +26,19 @@ function hommie_theme_setup() {
     ) );
 }
 add_action( 'after_setup_theme', 'hommie_theme_setup' );
+
+// Lightweight social metadata for cleaner link previews.
+function hommie_social_meta() {
+    $description = 'Hommie Community membantu kreator muda Indonesia membangun karya digital yang bukan hanya menjadi portofolio, tapi tumbuh sebagai legacy.';
+    $image = get_template_directory_uri() . '/favicon.png';
+    ?>
+    <meta property="og:title" content="<?php echo esc_attr(get_bloginfo('name')); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($description); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
+    <meta property="og:image" content="<?php echo esc_url($image); ?>">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="<?php echo esc_attr($description); ?>">
+    <?php
+}
+add_action( 'wp_head', 'hommie_social_meta', 5 );

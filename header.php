@@ -18,8 +18,6 @@
 </head>
 <body <?php body_class(); ?>>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
 
     <!-- Preloader -->
     <div id="preloader">
@@ -29,6 +27,9 @@
         const savedTheme = localStorage.getItem('hommie_theme') || 'light';
         if (savedTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
+        }
+        if (localStorage.getItem('hommie_accessible') === 'true') {
+            document.documentElement.setAttribute('data-accessible', 'true');
         }
         if (sessionStorage.getItem('hommie_preloader_shown')) {
             document.getElementById('preloader').style.display = 'none';
@@ -65,6 +66,9 @@
                 <button class="theme-toggle" aria-label="Toggle Dark Mode">
                     <i data-lucide="moon" class="moon-icon" aria-hidden="true"></i>
                     <i data-lucide="sun" class="sun-icon" aria-hidden="true" style="display: none;"></i>
+                </button>
+                <button class="accessibility-toggle" aria-label="Toggle Accessibility Mode" title="Accessibility Mode">
+                    <i data-lucide="accessibility" aria-hidden="true"></i>
                 </button>
                 <button class="btn btn-primary" onclick="window.location.href='<?php echo home_url('/join/'); ?>'">
                     <span class="lang-id">Gabung Sekarang</span>

@@ -39,7 +39,7 @@ get_header();
                         <li style="display: flex; gap: 12px; align-items: center;"><i data-lucide="check-circle" style="color: var(--accent-primary);" aria-hidden="true"></i> In-depth CV and Portfolio reviews</li>
                         <li style="display: flex; gap: 12px; align-items: center;"><i data-lucide="check-circle" style="color: var(--accent-primary);" aria-hidden="true"></i> Internship or referral opportunities</li>
                     </ul>
-                    <button class="btn btn-secondary"><span class="lang-id">Daftar Mentorship Batch 4</span><span class="lang-en">Register for Mentorship Batch 4</span></button>
+                    <a href="<?php echo home_url('/join/#contact'); ?>" class="btn btn-secondary"><span class="lang-id">Daftar Mentorship Batch 4</span><span class="lang-en">Register for Mentorship Batch 4</span></a>
                 </div>
             </div>
         </div>
@@ -93,14 +93,19 @@ if ($programs_query->have_posts()) :
     endwhile;
     wp_reset_postdata();
 else :
-    echo '<p class="lang-id" style="text-align: center; color: var(--text-light);">Belum ada program saat ini. Cek kembali nanti!</p>';
-    echo '<p class="lang-en" style="text-align: center; color: var(--text-light);">No programs available at the moment. Check back later!</p>';
+    echo '<div class="empty-state">';
+    echo '<i data-lucide="calendar-plus" aria-hidden="true"></i>';
+    echo '<h3 class="lang-id">Agenda program siap diisi dari WordPress Posts.</h3>';
+    echo '<h3 class="lang-en">Program agenda is ready to be filled from WordPress Posts.</h3>';
+    echo '<p class="lang-id">Tambahkan minimal 3 post program agar bagian ini menunjukkan kemampuan CMS WordPress secara nyata.</p>';
+    echo '<p class="lang-en">Add at least 3 program posts so this section shows real WordPress CMS capability.</p>';
+    echo '</div>';
 endif;
 ?>
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
-                <a href="#" style="color: var(--accent-primary); font-weight: 600;"><span class="lang-id">Lihat Kalender Penuh</span><span class="lang-en">View Full Calendar</span> &rarr;</a>
+                <a href="<?php echo home_url('/join/#contact'); ?>" style="color: var(--accent-primary); font-weight: 600;"><span class="lang-id">Gabung untuk Mendapatkan Kalender Lengkap</span><span class="lang-en">Join to Get the Full Calendar</span> &rarr;</a>
             </div>
         </div>
     </section>
